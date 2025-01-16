@@ -15,6 +15,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+import os 
+print("Files in directory:", os.listdir())
 # Load the trained CatBoost model
 with open('best_catboost_model.pkl', 'rb') as file:
     model = pickle.load(file)
