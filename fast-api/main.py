@@ -15,11 +15,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-import os 
-print("Files in directory:", os.listdir())
-# Load the trained CatBoost model
-with open('best_catboost_model.pkl', 'rb') as file:
+import os
+print("Files in directory:", os.listdir('fast-api'))
+
+with open('fast-api/best_catboost_model.pkl', 'rb') as file:
     model = pickle.load(file)
+
 
 class InputData(BaseModel):
     temperature: float
